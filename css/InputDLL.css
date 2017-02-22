@@ -1,0 +1,46 @@
+.InputDLL {
+    position: relative;
+    display: inline-block;
+}
+.InputDLL div.droplist {
+    display: none;
+    border-radius: 1px;
+    border: 1px solid rgba(36, 167, 224, 0.5);
+    width: 224px;
+    background: #fff;
+    height: 200px;
+    overflow: auto;
+    position: absolute;
+    top: 32px;
+    left: 2px
+}
+.InputDLL .droplist a {
+    display: block;
+    text-decoration: none;
+    color: #000;
+    padding: 4px 10px;
+    font-size: 14px;
+    cursor: default
+}
+.InputDLL .droplist a.light {
+    color: #fff;
+    background-color: #25a8e0;
+    cursor: pointer
+}
+.InputDLL input {
+    width: 223px;
+    padding-left: 6px;
+    height: 30px;
+    background: transparent;
+    border: none;
+    color: #000000;
+    font-size: 14px;
+    font-weight: 600;
+}
+.InputDLL input:focus {
+    width: 223px;
+    height: 30px;
+    border-radius: 3px;
+    outline: 1px solid #cccccc;
+    background-color: #ffffff;
+}
