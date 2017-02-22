@@ -1,37 +1,67 @@
-## Welcome to GitHub Pages
+## Input drop down list/menu
 
-You can use the [editor on GitHub](https://github.com/himstar/input-dropdown-menu-plugin/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+This script for binding an drop down list with input area, simple and clean so easy to use with your existing code without cleaning anything.
+<br>
+<img src="img/img.gif" title="Input DLL">
+<br>
+You need to link below script and css to your web page:
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+http://himstar.github.io/input-dropdown-menu-plugin/js/inputDLL.js
 
-### Jekyll Themes
+and 
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/himstar/input-dropdown-menu-plugin/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+http://himstar.github.io/input-dropdown-menu-plugin/css/inputDLL.css
 
-### Support or Contact
+```
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+You can also clone this repository to extract and use Js and CSS locally.
+
+# Code Explanation:
+
+HTML Structure:
+
+```ruby
+<div class="InputDLL">
+	<input type="text" id="id1" value="Option List" placeholder="Anything Text">
+	<span></span>
+	<div class="droplist">
+		<a>Option 1</a>
+		<a>Option 2</a>
+		<a>Option 3</a>
+	</div>
+</div>
+
+```
+
+Based on JS Object so you need to initiate plugin function with input id:
+
+```ruby
+new InputDLL('id1');
+
+```
+
+Support browsers key functions, focus, blur and enter:
+
+
+```ruby
+this.edit.onkeyup = function (e) {
+		e = e || window.event;	
+		if (e.keyCode == 13) {
+			// enter
+			if (parobject.visiblecount != 0) {
+				var upv = parobject.currentitem.innerHTML;   
+				upv = upv .replace(/\<b\>/ig, '');
+				upv = upv .replace(/\<\/b\>/ig, '');
+				parobject.edit.value = upv;
+			};
+			parobject.dropdownlist.style.display = 'none';
+			e.cancelBubble = true;
+      parobject.edit.blur();
+			return false;
+		}
+
+```
+You can makes changes as you need.
+
